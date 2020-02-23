@@ -4,6 +4,7 @@ using RMDataManager;
 using Swashbuckle.Application;
 using RMDataManager.App_Start;
 
+//Comment this to remove swagger/swashbuckle
 [assembly: PreApplicationStartMethod(typeof(SwaggerConfig), "Register")]
 
 namespace RMDataManager
@@ -17,9 +18,13 @@ namespace RMDataManager
             GlobalConfiguration.Configuration
                 .EnableSwagger(c =>
                     {
-                        //Adding the document filters that we've created
-                        c.DocumentFilter<AuthTokenOperation>();
 
+                        #region Adding the document/operation filters that we've created
+                        //Adds token end point to get logged in
+                        c.DocumentFilter<AuthTokenOperation>();
+                        //Adds a default parameter in every request to send back our accesToken
+                        c.OperationFilter<AuthorizationOperationFilter>(); 
+                        #endregion
 
                         // By default, the service root url is inferred from the request used to access the docs.
                         // However, there may be situations (e.g. proxy and load-balanced environments) where this does not

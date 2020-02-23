@@ -37,6 +37,7 @@ namespace RMDataManager.App_Start
                             type = "string",
                             name = "grant_type",
                             required = true,
+                            //The @in defines where we're putting this parameter, in this case we're putting it in the emulated form.
                             @in = "formData",
                             @default = "password"
                         },
