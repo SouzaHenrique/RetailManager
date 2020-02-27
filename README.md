@@ -32,7 +32,7 @@ Retail Manager System. This software was created through 'TimCo Retail Manager' 
 ## Upcoming Technologies
    > Some with :white_check_mark: are already or being implemented.
    
-  - :white_check_mark: Unit Testing
+  - Unit Testing
   - :white_check_mark: Dependency Injection 
   - :white_check_mark: WPF 
   - ASP.NET MVC
