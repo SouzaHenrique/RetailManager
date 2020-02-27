@@ -17,8 +17,8 @@ Retail Manager System. This software was created through 'TimCo Retail Manager' 
     
   
 ## Initial Project
-   - We have to build a desktop app tgat runs a cash register, handles inventory and manages the entire store.
-    In order to allow it to gron, though, we will be creating a Web API layer.
+   - We have to build a desktop app that runs a cash register, handles inventory and manages the entire store.
+    In order to allow it to grow, though, we will be creating a Web API layer.
     
   
 ## Initial Plan
@@ -32,23 +32,23 @@ Retail Manager System. This software was created through 'TimCo Retail Manager' 
 ## Upcoming Technologies
    > Some with :white_check_mark: are already or being implemented.
   - Unit Testing
-  - Dependency Injection
-  - WPF
+  - Dependency Injection :white_check_mark:
+  - WPF :white_check_mark:
   - ASP.NET MVC
   - .NET Core
   - SSDT
-  - Git - :white_check_mark:
-  - Azure DevOps
+  - Git :white_check_mark:
+  - Azure DevOps :white_check_mark:
   - Design Patterns
   - ASync
   - Reporting
-  - Wep API - :white_check_mark:
-  - Swagger (through Swashbuckle) - :white_check_mark:
+  - Wep API :white_check_mark:
+  - Swagger (through Swashbuckle) :white_check_mark:
   - Logging
   - Data Validation
   - HTML
   - CSS
   - Javascript
-  - Authentication (Through MS Identity) - :white_check_mark:
+  - Authentication (Through MS Identity) :white_check_mark:
       
   
