@@ -31,24 +31,25 @@ Retail Manager System. This software was created through 'TimCo Retail Manager' 
     
 ## Upcoming Technologies
    > Some with :white_check_mark: are already or being implemented.
-  - Unit Testing
-  - Dependency Injection :white_check_mark:
-  - WPF :white_check_mark:
+   
+  - :white_check_mark: Unit Testing
+  - :white_check_mark: Dependency Injection 
+  - :white_check_mark: WPF 
   - ASP.NET MVC
   - .NET Core
   - SSDT
-  - Git :white_check_mark:
-  - Azure DevOps :white_check_mark:
+  - :white_check_mark: Git 
+  - :white_check_mark: Azure DevOps 
   - Design Patterns
   - ASync
   - Reporting
-  - Wep API :white_check_mark:
-  - Swagger (through Swashbuckle) :white_check_mark:
+  - :white_check_mark: Wep API 
+  - :white_check_mark: Swagger (through Swashbuckle) 
   - Logging
   - Data Validation
   - HTML
   - CSS
   - Javascript
-  - Authentication (Through MS Identity) :white_check_mark:
+  - :white_check_mark: Authentication (Through MS Identity) 
       
   
