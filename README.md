@@ -37,17 +37,18 @@ Retail Manager System. This software was created through 'TimCo Retail Manager' 
   - ASP.NET MVC
   - .NET Core
   - SSDT
-  - Git :white_check_mark:
+  - Git - :white_check_mark:
   - Azure DevOps
   - Design Patterns
   - ASync
   - Reporting
-  - Wep API :white_check_mark:
+  - Wep API - :white_check_mark:
+  - Swagger (through Swashbuckle) - :white_check_mark:
   - Logging
   - Data Validation
   - HTML
   - CSS
   - Javascript
-  - MS Identity :white_check_mark:
+  - Authentication (Through MS Identity) - :white_check_mark:
       
   
