@@ -24,7 +24,8 @@ namespace RMDesktopUI.Helpers
         /// </summary>
         private void InitializeClient()
         {
-            string api = ConfigurationManager.AppSettings["api"];
+            //Gets from appSettings the default URL for our API
+            string api = ConfigurationManager.AppSettings["api"];          
 
             apiClient = new HttpClient();
             apiClient.BaseAddress = new Uri(api);

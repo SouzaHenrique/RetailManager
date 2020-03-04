@@ -13,12 +13,16 @@ namespace RMDesktopUI.ViewModels
 		private string _userName;
 		private string _password;
 		private IAPIHelper _apiHelper;
+		private string _errorMessage;
 
 		public LoginViewModel(IAPIHelper apiHelper)
 		{
 			_apiHelper = apiHelper;
 		}
 
+		/// <summary>
+		/// A UserName
+		/// </summary>
 		public string UserName
 		{
 			get { return _userName; }
@@ -28,6 +32,9 @@ namespace RMDesktopUI.ViewModels
 			}
 		}
 
+		/// <summary>
+		/// A User Password
+		/// </summary>
 		public string Password
 		{
 			get { return _password; }
@@ -38,6 +45,42 @@ namespace RMDesktopUI.ViewModels
 			}
 		}
 
+		/// <summary>
+		/// Computed property to define if an error message is visible or not.
+		/// </summary>
+		public bool IsErrorVisible
+		{
+			get
+			{
+				bool output = false;
+
+				if (ErrorMessage?.Length > 0)
+				{
+					output = true;
+				}
+
+				return output;
+			}
+		}		
+
+		/// <summary>
+		/// Representes an error message (observable)
+		/// </summary>
+		public string ErrorMessage
+		{
+			get { return _errorMessage; }
+			set 
+			{
+				_errorMessage = value;
+				NotifyOfPropertyChange(() => IsErrorVisible);
+				NotifyOfPropertyChange(() => ErrorMessage);				
+			}
+		}
+
+		/// <summary>
+		/// Computed property to define if the log in button is available or not.
+		/// It's wired up with the button by conventions stablished by Caliburn Micro.
+		/// </summary>
 		public bool CanLogIn
 		{
 			get
@@ -53,15 +96,20 @@ namespace RMDesktopUI.ViewModels
 			}
 		}
 
+		/// <summary>
+		/// Triggers an HTTP request to our API in order to make an authentication usgin the given UserName and Password.
+		/// </summary>
+		/// <returns></returns>
 		public async Task LogIn()
 		{
 			try
 			{
+				ErrorMessage = "";
 				var result = await _apiHelper.Authenticate(UserName, Password);
 			}
 			catch (Exception ex)
 			{
-				Console.WriteLine(ex.Message);
+				ErrorMessage = ex.Message;
 			}
 		}
 
