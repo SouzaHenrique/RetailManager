@@ -31,7 +31,8 @@ namespace RMDesktopUI
 
             _container
                 .Singleton<IWindowManager, WindowManager>()
-                .Singleton<IEventAggregator, EventAggregator>();
+                .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<IAPIHelper,APIHelper>();
 
             //Using reflection to get all the ViewModels Classes and register 
             //it on the container with "PerRequest" DI life cycle.
