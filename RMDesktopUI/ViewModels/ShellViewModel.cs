@@ -7,6 +7,9 @@ using Caliburn.Micro;
 
 namespace RMDesktopUI.ViewModels
 {
+    /// <summary>
+    /// Wrapps user-controlls in order to make them visible without oppening to many windows.
+    /// </summary>
     public class ShellViewModel : Conductor<object>
     {
         //Constructor injection
