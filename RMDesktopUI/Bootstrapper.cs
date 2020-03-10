@@ -13,7 +13,7 @@ namespace RMDesktopUI
 {
     public class Bootstrapper : BootstrapperBase
     {
-        //Our DI Container will handle the most part of class instantiation
+        //Our DI Container will handle some part of class instantiation
         private SimpleContainer _container = new SimpleContainer();
         public Bootstrapper()
         {
@@ -36,6 +36,7 @@ namespace RMDesktopUI
 
             //Using reflection to get all the ViewModels Classes and register 
             //it on the container with "PerRequest" DI life cycle.
+            //Transient
             GetType().Assembly.GetTypes()
                 .Where(type => type.IsClass)
                 .Where(type => type.Name.EndsWith("ViewModel"))
