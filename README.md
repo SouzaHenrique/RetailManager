@@ -34,8 +34,8 @@ Retail Manager System. This software was created through 'TimCo Retail Manager' 
    
   - Unit Testing
   - :white_check_mark: Dependency Injection 
-  - :white_check_mark: WPF 
-  - ASP.NET MVC
+  - :white_check_mark: WPF - Desktop UI
+  - ASP.NET MVC - Web UI
   - .NET Core
   - :white_check_mark: SSDT
   - :white_check_mark: Git 
