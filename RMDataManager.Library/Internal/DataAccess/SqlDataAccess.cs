@@ -11,10 +11,15 @@ using System.Threading.Tasks;
 namespace RMDataManager.Library.Internal.DataAccess
 {
     /// <summary>
-    /// Internal class to provide Sql data access for our library only.
+    /// Provides access to a sql server db
     /// </summary>
     internal class SqlDataAccess
     {
+        /// <summary>
+        /// Retrieves a connection string for our db based on configuration file
+        /// </summary>
+        /// <param name="name">A connection string name to look for in configuration file</param>
+        /// <returns>the connection string</returns>
         public string GetConnectionString(string name)
         {
             return ConfigurationManager.ConnectionStrings[name].ConnectionString;
