@@ -1,4 +1,4 @@
-﻿using RMDesktopUI.Models;
+﻿using RMDesktopUI.Library.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -8,7 +8,7 @@ using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace RMDesktopUI.Helpers
+namespace RMDesktopUI.Library.Api
 {
     public class APIHelper : IAPIHelper
     {
@@ -25,7 +25,7 @@ namespace RMDesktopUI.Helpers
         private void InitializeClient()
         {
             //Gets from appSettings the default URL for our API
-            string api = ConfigurationManager.AppSettings["api"];          
+            string api = ConfigurationManager.AppSettings["api"];
 
             apiClient = new HttpClient();
             apiClient.BaseAddress = new Uri(api);

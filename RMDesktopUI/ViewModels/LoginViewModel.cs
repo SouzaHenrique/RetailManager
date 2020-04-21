@@ -1,5 +1,5 @@
 ﻿using Caliburn.Micro;
-using RMDesktopUI.Helpers;
+using RMDesktopUI.Library.Api;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace RMDesktopUI.ViewModels
 {
-    public class LoginViewModel : Screen
+	public class LoginViewModel : Screen
     {
 		private string _userName;
 		private string _password;
@@ -46,6 +46,25 @@ namespace RMDesktopUI.ViewModels
 		}
 
 		/// <summary>
+		/// Computed property to define if the log in button is available or not.
+		/// It's wired up with the button by conventions stablished by Caliburn Micro.
+		/// </summary>
+		public bool CanLogIn
+		{
+			get
+			{
+				bool output = false;
+
+				if (UserName?.Length > 0 && Password?.Length > 0)
+				{
+					output = true;
+				}
+
+				return output;
+			}
+		}
+
+		/// <summary>
 		/// Computed property to define if an error message is visible or not.
 		/// </summary>
 		public bool IsErrorVisible
@@ -77,24 +96,7 @@ namespace RMDesktopUI.ViewModels
 			}
 		}
 
-		/// <summary>
-		/// Computed property to define if the log in button is available or not.
-		/// It's wired up with the button by conventions stablished by Caliburn Micro.
-		/// </summary>
-		public bool CanLogIn
-		{
-			get
-			{
-				bool output = false;
-
-				if (UserName?.Length > 0 && Password?.Length > 0)
-				{
-					output = true;
-				}
-
-				return output;
-			}
-		}
+		
 
 		/// <summary>
 		/// Triggers an HTTP request to our API in order to make an authentication usgin the given UserName and Password.
@@ -106,6 +108,10 @@ namespace RMDesktopUI.ViewModels
 			{
 				ErrorMessage = "";
 				var result = await _apiHelper.Authenticate(UserName, Password);
+
+				//Capture more information about the user
+
+
 			}
 			catch (Exception ex)
 			{

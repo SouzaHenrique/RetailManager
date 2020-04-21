@@ -8,6 +8,7 @@ using RMDesktopUI.ViewModels;
 using Caliburn.Micro;
 using System.Windows.Controls;
 using RMDesktopUI.Helpers;
+using RMDesktopUI.Library.Api;
 
 namespace RMDesktopUI
 {

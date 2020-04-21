@@ -12,14 +12,14 @@ namespace RMDataManager.Controllers
     [Authorize]
     public class UserController : ApiController
     {        
-        public List<UserModel> GetById()
+        public UserModel GetById()
         {
             //This way we're getting back the current logged user instead receiving UserId like a method parameter
             string UserId = RequestContext.Principal.Identity.GetUserId();
 
             UserData data = new UserData();
 
-            return data.GetUserById(UserId);
+            return data.GetUserById(UserId).First();
         }
         
     }

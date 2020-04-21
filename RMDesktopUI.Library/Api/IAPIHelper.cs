@@ -1,7 +1,7 @@
-﻿using RMDesktopUI.Models;
+﻿using RMDesktopUI.Library.Models;
 using System.Threading.Tasks;
 
-namespace RMDesktopUI.Helpers
+namespace RMDesktopUI.Library.Api
 {
     /// <summary>
     /// Implements an contract that ever APIHelper Should implement in order to make HTPP requests for our api.
