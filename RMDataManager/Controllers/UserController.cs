@@ -12,6 +12,7 @@ namespace RMDataManager.Controllers
     [Authorize]
     public class UserController : ApiController
     {        
+        [HttpGet]
         public UserModel GetById()
         {
             //This way we're getting back the current logged user instead receiving UserId like a method parameter
