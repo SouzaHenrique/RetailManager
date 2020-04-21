@@ -8,7 +8,9 @@ using RMDesktopUI.ViewModels;
 using Caliburn.Micro;
 using System.Windows.Controls;
 using RMDesktopUI.Helpers;
+using RMDesktopUI.Library.Models;
 using RMDesktopUI.Library.Api;
+
 
 namespace RMDesktopUI
 {
@@ -33,6 +35,7 @@ namespace RMDesktopUI
             _container
                 .Singleton<IWindowManager, WindowManager>()
                 .Singleton<IEventAggregator, EventAggregator>()
+                .Singleton<ILoggedInUserModel, LoggedInUserModel>()
                 .Singleton<IAPIHelper,APIHelper>();
 
             //Using reflection to get all the ViewModels Classes and register 
