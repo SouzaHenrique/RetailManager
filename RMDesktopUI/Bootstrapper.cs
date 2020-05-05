@@ -14,6 +14,9 @@ using RMDesktopUI.Library.Api;
 
 namespace RMDesktopUI
 {
+    /// <summary>
+    /// An IoC container to provide Dependency Injection.
+    /// </summary>
     public class Bootstrapper : BootstrapperBase
     {
         //Our DI Container will handle some part of class instantiation
