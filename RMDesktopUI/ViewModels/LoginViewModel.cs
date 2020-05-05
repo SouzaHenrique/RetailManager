@@ -1,4 +1,5 @@
 ﻿using Caliburn.Micro;
+using RMDesktopUI.EventModels;
 using RMDesktopUI.Library.Api;
 using System;
 using System.Collections.Generic;
@@ -14,10 +15,15 @@ namespace RMDesktopUI.ViewModels
 		private string _password;
 		private IAPIHelper _apiHelper;
 		private string _errorMessage;
+		private IEventAggregator _events;
 
-		public LoginViewModel(IAPIHelper apiHelper)
+		public LoginViewModel(IAPIHelper apiHelper, IEventAggregator events)
 		{
+			//Help us to manipulate Http requests to an specific api , in this case our back-end api
 			_apiHelper = apiHelper;
+
+			//Help us to publish and subscribe to events.
+			_events = events;
 		}
 
 		/// <summary>
@@ -95,7 +101,6 @@ namespace RMDesktopUI.ViewModels
 				NotifyOfPropertyChange(() => ErrorMessage);				
 			}
 		}
-
 		
 
 		/// <summary>
@@ -111,6 +116,9 @@ namespace RMDesktopUI.ViewModels
 
 				//Capture more information about the user
 				await _apiHelper.GetLoggedInUserInfo(result.Access_Token);
+
+				//Make sure that we're using the UI thread in order to prevent cross threading issues
+				_events.PublishOnUIThread(new LogOnEvent());
 
 			}
 			catch (Exception ex)
